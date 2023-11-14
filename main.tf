@@ -4,10 +4,6 @@ resource "aws_acm_certificate" "this" {
   validation_method = "DNS"
   key_algorithm = var.key_algorithm
 
-  options {
-    certificate_transparency_logging_preference = var.options.certificate_transparency_logging_preference
-  }
-
   lifecycle {
     create_before_destroy = true
   }
